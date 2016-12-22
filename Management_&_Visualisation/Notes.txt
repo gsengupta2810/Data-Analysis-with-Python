@@ -1,0 +1,49 @@
+Population : the entire group we want to focus our study on, be it population of men, or animal population or some bacteria.
+Sample: Population is very large and it is impossible to gain data from all of it. So we require to collect data from a part of the population 			which can act as a representative of the whole population. This is called sample.
+Inference: Is the conclusion or outcome which we obtain from the data as a result of its analysis. 
+
+Variables: 
+	1. Quantitative :- Ex- Number of people using internet per hour of the day.
+	2. Catagorical:- Used as dummycodes. Example:- Gender
+
+My 1st research question:- 
+	I am using the GapMinder data
+	Is there a relation between Alcohol consumption per adult(age 15+) and Unemployment rate(age 15+) 
+
+Steps in data management:- 
+	Deal with missing data.
+	In some cases the missing data can be logically filled. For example in cases of skip patterns.
+	Next step is creation of a secondary variable: A variable that contains information from two or more primary variables.
+	After the creation of secondary variables, we need to consider if some of the primary variables need to be grouped or binned.
+
+Data Visualisation:- 
+ 	Single Variable:-
+	 	First step is to convert catagorical variables into a formatted manner so that they can be fitted as numeric variables into a format that python recognises as catagorical and henceforth can be plotted.
+	 	Modality of a distribution:- 
+	 		Unimodal :- single peak
+	 		Bimodal :- Two peaks
+	 		Uniform distribution
+	 	
+	 	Distribution can be skewed right or skewed left
+	 	For example in the week 3 plots,  the alcohol consumtion histogram is skewed right. This indicates that most countries have a consumption per capita level below the center and is unimodal. And the second histogram of unemployment rate is unimodal and more or less unskewed.
+	 	Skewed distributions can also be bimodal!! 
+
+	 	Spread of a distribution (also called Variability):- The approximate range covered by the data. 
+	 	The overall pattern of the distribution is described by - Shape, Center and Spread.
+
+	 	As a measure of spread, standard deviation is commonly used. It is the average distance between a random point and the mean.
+	 	Variance=Sum((Xi-X_mean)**2)/(n-1)
+	 	SD=Sqrt(Variance)
+
+	 	Appropriate descriptive statistics:-
+	 		Quantitative variables are best described by histograms, exact shapes, centers and spread
+	 		While catagorical variables are best described by frequency distributions and bar chart
+	Two Variables:-
+		We need to identify which is the dependent variable and which is the independent variable first of all. The dependent variable is plotted on the y axis.
+		The first question :- Is the dependent variable catagorical or quantitative. If catagorical, how many catagories?
+		Next question to ask:- What type is the explainatory variable? 
+		If the response variable is catagoric and the explainatory variable is quantitative, convert the explainatory variable into catagoric by introduction of a new variable derrived from the original explainatory variable. 
+		Now we can graph a C->C bar chart. 
+
+	If there are more than two response catagories:-  We need to collapse the response catagories into two. 
+	When the response variable is quatitative for the plot of urban rate vs internet use, both response and explainatory variables are quantitative A bar chart will not wok here, we require a scatter plot !! 

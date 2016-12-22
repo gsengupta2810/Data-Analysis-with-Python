@@ -1,0 +1,106 @@
+The data that we are working with can be observational or  experimental(the data was manipulated by the researcher according to his need of study).
+Experimental studies:- 
+	True experimental studies:
+		Only one of the variables is manipulated by the experimentor keeping other variables constant.
+		Control group to which other variables of the explainatory variables are compared to.
+		Observations must be randomly assigned.
+	Quasi experiment: 
+		No random assignment in this case.
+Explanatory variable: The variable which determines or describes a particular behaviour of the experiment result.
+Response Variable: The outcome of the experiment.
+
+Confounding Variable or Lurking variable: This effects the response variable creating a perception that the explanatory variable has caused the effect. 
+
+Association does not imply causation!!!
+Use of regression techniques is to learn more about the relationship between many explanatory variable and response variables.
+Writing about data:- 
+	Should include methods section which mentions the methods used to collect the data. 
+	Identification of who or what was studied. Levels of analysis 
+	Procedures: whether data were collected by surveillance, survey, experiment, or another method. Place and period of collection of the data.
+	Measures: Description of questions or measures asked in the survey/observations. 
+Multivariate models:-
+	We will be studying only two multivariate models:- 
+		Multiple regression - Quantitative
+		Logistic regression - Binary (catagorical)
+
+	Multiple regression :- 
+		Centering :-
+			We need to center quantitative explainatory variables for regression analysis by substracting the mean value of the observations from each observation.
+			Centering simply means subtracting a constant from every value of a variable.  What it does is redefine the 0 point for that predictor to be whatever value you subtracted.  It shifts the scale over, but retains the units.
+			The effect is that the slope between that predictor and the response variable doesn’t change at all.  But the interpretation of the intercept does.
+			The intercept is just the mean of the response when all predictors = 0.  So when 0 is out of the range of data, that value  is meaningless.  But when you center X so that a value within the dataset becomes 0, the intercept becomes the mean of Y at the value you centered on.
+			What’s the point?  Who cares about interpreting the intercept?
+			It’s true.  In many models, you’re not really interested in the intercept.  In those models, there isn’t really a point, so don’t worry about it.
+			But, and there’s always a but, in many models interpreting the intercept becomes really, really important.  So whether and where you center becomes important too.
+			A few examples include models with a dummy-coded predictor, models with a polynomial (curvature) term, and random slope models.
+			Let’s look more closely at one of these examples.
+			In models with a dummy-coded predictor, the intercept is the mean of Y for the reference category—the category numbered 0.  If there’s also a continuous predictor in the model, X2, that intercept is the mean of Y for the reference category only when X2=0.
+			If 0 is a meaningful value for X2 and within the data set, then there’s no reason to center.  But if neither is true, centering will help you interpret the intercept.
+		
+		Note:- if a p-vaue is significant and the parameter value is negative it would mean that there is a negative relationship between that variable and the response variable.  
+		So far we can get the estimated regression parameter coefficients, howver our dataset is just a sample of the population. So he coefficients are an estimate of the parameters. This is due to sampling variability.
+
+		Confidence intervals:- 
+			These tell us which values of the parameter estimates are plausible in the population. Typically we look at 95% confidence internval, which tells us with 95% certainity that the true population parameter falls somewhere between the lower and upper confidence limits.
+			In regression when a variable has a p value higher than the significance limit, we will see that the 95% confidence interval will have a value of 0 within its range which indicates no assosiation.
+
+		Polynomial regression:-
+			Centering is especially necessary during a polynomial regression model because it makes it much more easier to interpret the coefficients.
+			A positive linear coefficient and a negative curvilinear coefficient indicates that the curve has a convex nature(concave up or convex down).
+			If the value of r2 incrreases on adding the polynomial term, then it indicates that the best fit curve to capture the variability of the data in the sample should be non-linear.
+			
+			NOTE:-
+				There comes a warning saying :- The condition number is large, 1.08e+03. This might indicate that there are
+				strong multicollinearity or other numerical problems. This indicates that there are explainatory variables in the model that are highly correlated. 
+				Generally when we have two highly correlated explainatory variables in the model we would want to keep only one of them in the model.This is an indicator of multicollinearity which can create trouble while estimating the parameters.
+				But in this case we know that the linear term and the quardratic term are related but we want to keep them to account for the curved variability of the scatter plot. 
+				
+			This leads us to another important function of centering!!! 
+			Centering significantly decreases the correlation between the linear and quardratic variables in a polynomial regression model. 
+
+			Something to keep in mind is that modeling a sample with higher order of polynomials increases the risk of overfitting!! An overfitted model is biased towards a particular sample and does not describe the whole population in general.
+
+		Evaluating models:- 
+			We should evaluate the model for mis specification. 
+			Specification is the process of developing a regression model. If a model is correctly specified then the residuals/ error terms are not correlated with the explainatory variables. If the data fails to meet the regression assumptions or our model is missing critical explainatory variables then we have model specification error.
+			We perform diagnostic to find the cause of the error. We examine model residuals.
+			There are many regression diagnostic processes. In this course we will confine to residual plots in order to visually evaluate the residual error.
+
+			When all the explainatory variables are centered, the intercept is the value of the response variable when all the explainatory variables are at there mean values. 
+
+			We can use a qq plot to evaluate the assumption that the residuals from our models follow a normal distribution. A qq plot plots the quantile of the residuals that we would theoritically see if the residuals followed a normal distribution against the quantiles for residuals estimated from our regression model.
+
+			If the scatter points do not perfectly overlap on the line, this indicates that the residuals did not follow perfect normal distribution. This means that curvilinear assiciation we saw may not be fully estimated by the quardratic urban rate term. There may be other explainatory variables that we might consider including in our model, that might improve the fit of the model.
+
+			On plotting the standardised residuals against the multiples of Standard deviation about the mean, we have most of the points lying within |1*SD| about the mean, only very few points lie outside the |2*SD| line. These points are warnings of outliers. If there are points > |3*SD| there are extreme outliers.
+
+			Some rules that can be generally used :-
+				If more than 5% of our residuals lie outside 2*SD lines or more than 1% of our residuals lie outside 2.5*SD lines, then there is evidence that the level of error within our model is unacceptable. 
+				The biggest contributer to poor model fit is leaving out important explainatory variables. 
+
+			Partial regression residual plot:-
+				Because we have multiple explainatory variables, we can take a look at the contribution of each explainatory variable to the model fir controlling the other explainatory variable. This is plotted in partial regression residual plot. It plots the residuals of the model with and without the control variable on the y and x axis. 
+				We can examine the plot to see if there exists a linear or non linear relation. If there exists a linear relationship for the dependent variable after adjusting for the variables already in the model, it meets that the linearity assumption. Otherwise if there exists a curvilinear relationship , this provokes us on adding a polynomial term for that variable.
+
+			Leverage plot:-
+				Examines and identify observations that have an unusually large influence on the estimation of the predictive value of the response variable or there are outliers or both. Leverage of an observation is the value predicted scores for the other observations would differ if this particular obsrvation was not included. 
+				Values should be between 0 and 1. A point with 0 leverage, has no effect on the regression model.
+				Outliers are points with residuals greater than 2.
+				We are concerned about observations that are both outliers and have a above normal leverage.
+
+		Dummy coding / Parameterization:- 
+			Effect coding:- Compare one group to the average of the others 
+			Reference group coding:- compare each group to a reference group 
+				After running the referene coding analysis, we can find out which catagory is significantly different from the others in the catagorical explainatory variable with more than two catagories.
+
+	Logistic regression :-
+		If the response variable is catagorical with two levels, then we can use this. In order to better answer our query of the probability of a particular outcome of the response variable based on the observations, we will use the odds ratio instead of using coefficients. 
+		Odds Ratio:- 
+			It is the probability of an event occuring in one group with respect to its proability occuring in other group. 
+			Can range from 0 to infinity modeled about a center 1. If we get an odds ratio 1, it means that there is an equal probability of response to be one of the two values.
+			
+			For multiple explainatory variables, we can judge according to their odds ratio how much one of them affects the response variable when the others are controlled. If they have overlapping Confidence intervals, we cannot say one of them is strongly associated with the response variable.
+
+			Note:- Always code 0 as negative and 1 as positive outcome for an event.
+
+

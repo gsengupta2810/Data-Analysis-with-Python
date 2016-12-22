@@ -1,0 +1,83 @@
+Inferential statistics:- 
+	Based on a sample it allows us to generalise on a larger sample of the population based on our study of a small sample. Allow us to test our hypothesis directly.
+Sampling variability:- 
+	The idea that the sample results will change from samplt to sample within a population is called sampling variability.
+Central limit theorum:- 
+	When we start taking more and more smaples and start plotting there means, the distribution will proceed to becoming more and more Normally distributed.
+Parameter vs Staistic:-
+	For example, you randomly poll voters in an election. You find that 55% of the population plans to vote for candidate A. That is a statistic. Why? You only asked a sample of the population who they are voting for. You calculated what the population was likely to do based on the sample.
+	The difference between a statistic and a parameter is that statistics describe a sample. A parameter describes an entire population.
+
+Hypothesis testing:- 
+	ANOVA(analysis of variance) and Chi-Square test are some of the commonly used methods for hypothesis testing.
+	They all include he same basic steps.
+	1. Specifying the null hypothesis.
+	2.Choosing a Sample
+	3.Assessing the evidence
+	4.Drawing Conclusions 
+Null Hypothesis:- 
+	This starts by saying that there is no relation between two variables and one does not have any effect on the other.
+Alternate Hypothesis:-
+	Its a negation of the null hypothesis, it says that the variables are correlated.
+Now we need to access the evidences in order to reject one of the above hypothesis. The probability of the null hypothesis being true when less than a particular value, it can be satisfactorily rejected. This probability is called  p-value.
+Significance level of a test (alpha):- 
+	If the p-value of the test <0.05(5%) this shows that it is 95% likely that our inference is true following repeated samples drawn from te population. We can say the data provides significant evidence against the null hypothesis. So we reject the NH and accept the AH. In case p-value>alpha, the alternate is done.
+
+Choosing the Statistical test:-
+	ANOVA-Analysis of Variance -------------------------------------- For C->Q type of relation
+	X2-Chi-Square test of independence------------------------------- For C->C type of relation
+	r-correlation coefficient --------------------------------------- For Q->Q type of relation
+	
+	For Q->C type of relation, catagorize Q into two levels and then use the X2 test of independence.
+
+ANOVA (Analysis of variance):-
+	Example:- X= Major of a student, Y= Frustration level 
+	H0=> mean of frustration levels from different majors are equal.
+	Ha=> mean of frustration levels from different majors are different.
+	Box plot can be conveniently used to plot the smallest observation of a group, the mean, the median, and the largest observation and also the spread.
+	In anova we need to answer the question that are the differences in sample means in different samples are merely due to sampling variability?
+	
+	F= ( Variation among the sample means)/ (Variation within the groups)
+	Greater is the value of F, higher is the evidence against the H0.
+
+	p-Value of the ANOVA F test is the probability of getting a F value as large as we got or even larger had the null hypothesis been true.
+	If this p value is less than alpha, we can satisfactorily reject the null hypothesis and accept the Alternate Hypothesis.
+
+	There are many ways in which the means can be not equal. In case where the explainatory variable has more than two groups,a significant ANOVA does not tell us which groups are different from the others. To determine which groups are different from the others, we need to perform a post hoc test.
+
+	POST HOC TEST- This is done to avoid Type 1 errors ( rejecting the null hypothesis when the null hypothesis is true). There are very high numbers of post hoc test. Tukey's Honestly Significance Difference test is among one of them.
+
+X2- Chi-square test:- Performed for Catagorical to Catagorical variable testing.
+	This test is based on the difference between the expected table and the observed table for a sample. We use the rule of independece of events to find the probability of each events.
+	Expected counts= (Column Total * Row Total)/(Table Total)
+	X2 is the single number that concludes the difference between tha observed and expected counts.
+
+	X2=Sum of all cells [ ( Observed Count - Expected Count)**2 / Expected Count]
+
+	In a 2/2 case:- 
+		X2 is called large when  X2>3.84
+
+	p-value for this test is the probability of getting counts like those observed assuming that the two variables are not related.
+	When the explainatory variable has more than two levels the c2 statistic and p-value does not give us the insight into why the H0 can be rejected. Again Post Hoc test is required to avoid Type 1 error.
+
+	In this case we'll be using the BONFERRONI ADJUSTMENT.
+
+	Bonferroni adjustment:-
+		Used to conrol the family wise error rate also known as the maximum overall type 1 error rate. 
+		The new p-value is given by 
+			p=p0/c
+			where c is the number of comparisions that we plan to make and p0=0.05
+		Now we need to run a X2 test for all the comparisions 
+
+Pearson Correlation:- Used for two quantitative variables.
+	Correlation coefficient(r) measures the linear relationship between two variables. The strength of the relationship is determined by how closely the points follow the relationship.
+
+	Correlation coefficient(r) ranges from -1 to 1. Values close to 0 are weak linear relation and values close to 1 are strongly linear relationships.
+
+	This generates a p-value which when less than 0.05 , we can reject the H0 safely.
+
+Statistical Interaction:- 
+	It describes the relationship between two variables that is moderated by or dependent upon by a third variable.
+	What if the population we are studying has subgroups in whihch different varibles are affected by different factors?
+		We'll take example of major depression disorder affecting the relation between number of ciggerates smoked and nicotine dependence.
+	
